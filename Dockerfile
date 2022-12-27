@@ -2,6 +2,8 @@ FROM postgres:10
 
 COPY *.sh /var/lib/postgresql/
 
+RUN rm -f /etc/apt/sources.list.d/pgdg.list
+
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get -y install wget iputils-ping && \
